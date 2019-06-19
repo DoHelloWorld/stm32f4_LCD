@@ -18,7 +18,6 @@ int main(void)
     SystemInit();
     delay_Init();
     LCD_TypeDef LCD;
-    
     LCD.EMSR = (LCD_EMSR_ID);
     LCD.DOCR = (LCD_DOCR_D);
     LCD.CDSR = (LCD_CDSR_RL);
@@ -35,13 +34,11 @@ int main(void)
 Creating custom character:
 
 const uint8_t customChar[] = {0x0A, 0x15, 0x0A, 0x04, 0x04, 0x0A, 0x15, 0x0A};
-
 int main(void)
 {
     SystemInit();
     delay_Init();
     LCD_TypeDef LCD;
-    
     LCD.EMSR = (LCD_EMSR_ID);
     LCD.DOCR = (LCD_DOCR_D);
     LCD.CDSR = (LCD_CDSR_RL);
