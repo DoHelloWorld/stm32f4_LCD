@@ -1,5 +1,5 @@
-# stm32f4_LCD
-Simple LCD library. 
+## stm32f4_LCD
+# Simple LCD library. 
 
 This library works with stm32f4xx devices and others Cortex-M4 ST microcontrollers.
 No SPL and HAL makes lib light.
@@ -11,8 +11,9 @@ Auto string cutoff.
 
 This lib also contains delay. Delay is made on DWT timer. You can use your own, just include your lib with function delay_us(uint32_t us).
 
-Hello world:
+# Hello world:
 
+``` c
 int main(void)
 {
     SystemInit();
@@ -30,15 +31,19 @@ int main(void)
     }
     return 0;
 }
+```
 
-Creating custom character:
+# Creating custom character:
 
+``` c
 const uint8_t customChar[] = {0x0A, 0x15, 0x0A, 0x04, 0x04, 0x0A, 0x15, 0x0A};
+
 int main(void)
 {
     SystemInit();
     delay_Init();
     LCD_TypeDef LCD;
+    
     LCD.EMSR = (LCD_EMSR_ID);
     LCD.DOCR = (LCD_DOCR_D);
     LCD.CDSR = (LCD_CDSR_RL);
@@ -53,4 +58,5 @@ int main(void)
     }
     return 0;
 }
+```
 
